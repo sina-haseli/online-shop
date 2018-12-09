@@ -1,0 +1,42 @@
+.header, .menu, .content {
+  box-sizing: border-box;
+}
+
+.app {
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+}
+
+html, #root, body {
+  height: 100%;
+  margin: 0px;
+}
+
+body {
+  font-family: Helvetica, Arial;
+}
+
+.app-body {
+  display: flex;
+  flex:1;
+}
+
+.content {
+  position: relative;
+  flex: 1;
+  padding: 10px;
+  overflow: auto;
+}
+
+.online-shop-title {
+  font-size: 26px;
+  margin: 5px;
+  color: gray;
+}
+
+.online-shop-title-smaller {
+  font-size: 22px;
+  margin: 5px;
+  color: gray;
+}
