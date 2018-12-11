@@ -10,7 +10,7 @@ import jwt_decode from 'jwt-decode';
 const axios = Axios.create({
     baseURL: CONSTANTS.BASE_URL,
     timeout: 1000,
-    headers: {'x-access-token': ' jwt ' }
+    headers: {'x-access-token': ' localStorage '  }
 });
 
 // in action async hast
@@ -21,7 +21,7 @@ export function login(username, password) {
     return axios.post('/login', { username, password })
         //.then(({data}) => {
         .then(res=>{
-            //console.log(data);
+            console.log(res.data);
             const {token} = res.data;
             localStorage.setItem('jwtToken', token);
             setAuthToken(token);
