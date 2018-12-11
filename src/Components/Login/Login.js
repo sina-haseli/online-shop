@@ -53,8 +53,9 @@ class ConnectedLogin extends React.Component{
               />
               <Button
                     style={{marginTop:10}}
-                    variant="outlined"
+                    //variant="outlined"
                     color="primary"
+                    size="medium"
                     onClick={()=> {
 
                         Auth.authenticate(this.state.userName, this.state.pass, (user)=>{

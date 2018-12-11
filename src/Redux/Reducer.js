@@ -1,5 +1,6 @@
 import * as CONSTANTS from "./Constants";
 
+
 /*
  * In this app we tend to store that part of application state in Redux, which can be needed
  * by mulitple components.
