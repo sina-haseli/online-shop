@@ -1,0 +1,20 @@
+.header {
+    height: 90px;
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    background-color: #FAFAFB;
+}
+
+.left-part {
+    display: flex;
+}
+
+.right-part {
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.react-dropdown-h {
+    font-size: 14px;
+}
