@@ -1,88 +1,106 @@
-import React , {Component} from 'react';
-import {withRouter, Redirect} from 'react-router-dom';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import Auth from '../../Auth';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import {setLoggedInUser} from '../../Redux/Actions';
+//import Auth from '../../Auth';
+
+import {login} from '../../Redux/Actions';
+import classnames from 'classnames';
 
 import './Login.css';
 
 
 
-class ConnectedLogin extends React.Component{
-    state = {
-        userName:"",
-        pass:"",
-        redirectToReferrer: false
-    };
-    userName = event => {
-        this.setState({
-            [event.target.userName]: event.target.value
-        });
-    };
-    userPass= event => {
-        this.setState({
-            [event.target.pass]: event.target.value
-        });
-    };
-    render(){
-        const {from} = this.props.location.state|| {from: {pathname:'/'}};
+class ConnectedLogin extends React.Component {
 
-        /*
-        age user auth shode bod , befrestesh be hamon ja ke az aval omade bod
-         */
-        if (this.state.redirectToReferrer===true){
-            return<Redirect to={from} />
+    constructor() {
+        super();
+        this.state = {
+            email: '',
+            password: '',
+            errors: {}
         }
-
-        return(
-          <div className="Login-container">
-              <div style={{marginBottom:50, fontSize:26, textAlign:"center", color:"gray"}}>Log in</div>
-              <TextField
-                    defaultValue={this.state.userName}
-                    placeholder="User name"
-                    onChange={this.userName}
-              />
-
-              <TextField
-                    defaultValue={this.state.pass}
-                    type="password"
-                    placeholder="Password"
-                    onChange={this.userPass}
-              />
-              <Button
-                    style={{marginTop:10}}
-                    //variant="outlined"
-                    color="primary"
-                    size="medium"
-                    onClick={()=> {
-
-                        Auth.authenticate(this.state.userName, this.state.pass, (user)=>{
-
-                            if (!user){
-                                this.setState({wrongCred: true});
-                                return;
-                            }
-
-                            this.props.dispatch(setLoggedInUser({name: user.name}));
-                            this.setState(() => ({
-                                redirectToReferrer: true
-                            }))
-
-                        })
-
-                    }}>Log in </Button>
-
-              {this.state.wrongCred && <div style={{color:"red"}}>wrong username and/or pass</div>}
-
-          </div>
-
-        );
-
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    handleInputChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const user = {
+            email: this.state.email,
+            password: this.state.password,
+        };
+        this.props.login(user);
+    }
+
+    componentWillReceiveProps(nextProps) {
+
+        if(nextProps.errors) {
+            this.setState({
+                errors: nextProps.errors
+            });
+        }
+    }
+
+    render() {
+        const {errors} = this.state;
+        return(
+            <div className="container" style={{ marginTop: '50px', width: '700px'}}>
+                <h2 style={{marginBottom: '40px'}}>Login</h2>
+                <form onSubmit={ this.handleSubmit }>
+                    <div className="form-group">
+                        <input
+                            type="email"
+                            placeholder="email"
+                            className={classnames('form-control form-control-lg', {
+                                'is-invalid': errors.email
+                            })}
+                            name="email"
+                            onChange={ this.handleInputChange }
+                            value={ this.state.email }
+                        />
+                        {errors.email && (<div className="invalid-feedback">{errors.email}</div>)}
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            className={classnames('form-control form-control-lg', {
+                                'is-invalid': errors.password
+                            })}
+                            name="password"
+                            onChange={ this.handleInputChange }
+                            value={ this.state.password }
+                        />
+                        {errors.password && (<div className="invalid-feedback">{errors.password}</div>)}
+                    </div>
+                    <div className="form-group">
+                        <button type="submit" className="btn btn-primary">
+                            Login User
+                        </button>
+                    </div>
+                </form>
+            </div>
+        )
+    }
+
+
 }
 
-const Login = withRouter(connect()(ConnectedLogin));
+ConnectedLogin.propTypes = {
+    errors: PropTypes.object,
+    email:PropTypes.any.isRequired
+};
+
+const mapStateToProps = (state) => ({
+    errors: state.errors
+});
+const Login = withRouter(connect(mapStateToProps, {login})(ConnectedLogin));
 
 export default Login;

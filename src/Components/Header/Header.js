@@ -42,7 +42,7 @@ class ConnectedHeader extends Component {
         return (
             <div className="header">
                 <div className="left-part">
-                    <div style={{ width: 50, marginTop: 20, marginLeft: 10 }}>
+                    <div style={{ width: 100, marginTop: 20, marginLeft: 10 }}>
                         <IconButton onClick={() => {
                             this.props.dispatch(toggleMenu())
                         }}>
@@ -82,7 +82,7 @@ class ConnectedHeader extends Component {
                         <IconButton aria-label="Cart" onClick={() => {
                             this.props.dispatch(showCartDlg(true))
                         }}>
-                            <Badge badgeContent={this.props.nrOfItemsInCard} color="primary">
+                            <Badge badgeContent={"1"} color="primary">
                                 <ShoppingCartIcon />
                             </Badge>
                         </IconButton>

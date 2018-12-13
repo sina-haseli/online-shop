@@ -18,7 +18,7 @@ const axios = Axios.create({
 // ke bad az in state user set koni
 // valy alan ino ejra migiram ke API call ro bebini
 export function login(username, password) {
-    return axios.post('/login', { username, password })
+    return axios.post('v1/users/login', { username, password })
         //.then(({data}) => {
         .then(res=>{
             console.log(res.data);
@@ -33,11 +33,11 @@ export function login(username, password) {
             // age nabod login koni
         })
         .catch(err => {
-            console.log('AUTH FAILED', err)
-           /* dispatch({
+            //console.log('AUTH FAILED', err)
+           dispatch({
                type: GET_ERRORS,
-               payload: err.response.data
-            }); */
+               payload: err.status
+            });
             // action failure
         })
 }
@@ -58,12 +58,31 @@ export function login(username, password) {
 }
 */
 
+export const registerUser = (user, history) => dispatch => {
+    axios.post('https://api.parand-computer.ir/v1/users', user)
+        .then(res => history.push('/login'))
+        .catch(err => {
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            });
+        });
+};
+
 export const setCurrentUser = decoded => {
     return{
         type: SET_CURRENT_USER,
         payload:decoded
     }
 };
+
+/*export const setLoggedOutUser = (history) => dispatch => {
+    localStorage.removeItem('jwtToken');
+    setAuthToken(false);
+    dispatch(setCurrentUser({}));
+    history.push('/login');
+}
+*/
 
 export const setLoggedInUser = (user) => ({ type:  CONSTANTS.SET_LOGGED_IN_USER, payload: user });
 export const toggleMenu = () => ({ type:  CONSTANTS.TOGGLE_MENU, payload: null });

@@ -20,7 +20,8 @@
     "redux-thunk": "^2.3.0",
     "remarkable": "^1.7.1",
     "slick-carousel": "^1.8.1",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "prop-types": "latest"
   },
   "scripts": {
     "start": "react-scripts start",

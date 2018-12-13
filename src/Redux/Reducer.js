@@ -1,4 +1,6 @@
 import * as CONSTANTS from "./Constants";
+import {SET_CURRENT_USER} from "./Constants";
+import isEmpty from '../Validation/Is-empty';
 
 
 /*
@@ -7,6 +9,7 @@ import * as CONSTANTS from "./Constants";
  */
 const initialState = {
     loggedInUser: null,
+    user: {}
 
 };
 
@@ -17,6 +20,13 @@ const rootReducer = (state = initialState, action) => {
 
         case CONSTANTS.SET_LOGGED_IN_USER:
             return { ...state, loggedInUser: action.payload };
+
+        case SET_CURRENT_USER:
+            return {
+                ...state,
+                _isAuthenticated:isEmpty(action.payload),
+                user:action.payload
+            };
 
         default:
             return state;
