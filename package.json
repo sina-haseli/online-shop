@@ -21,7 +21,8 @@
     "remarkable": "^1.7.1",
     "slick-carousel": "^1.8.1",
     "uuid": "^3.3.2",
-    "prop-types": "latest"
+    "prop-types": "latest",
+    "classnames": "latest"
   },
   "scripts": {
     "start": "react-scripts start",

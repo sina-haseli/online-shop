@@ -3,7 +3,7 @@ export const SET_LOGGED_IN_USER = "SET_LOGGED_IN_USER";
 
 
 // in jash inja nist ama kirete
-export const BASE_URL = 'https://api.parand-computer.ir/'
+export const BASE_URL = 'https://api.parand-computer.ir/';
 export const TOGGLE_MENU = "TOGGLE_MENU";
 export const SHOW_CART_DLG = "SHOW_CART_DLG";
 

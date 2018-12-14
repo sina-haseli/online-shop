@@ -17,29 +17,30 @@ const axios = Axios.create({
 // bara hamin bayad aval redux thunk piade sazi koni
 // ke bad az in state user set koni
 // valy alan ino ejra migiram ke API call ro bebini
-export function login(username, password) {
-    return axios.post('v1/users/login', { username, password })
+export function login(email, password) {
+    return function (dispatch) {
+        return axios.post('https://api.parand-computer.ir/v1/users/login', {email, password})
         //.then(({data}) => {
-        .then(res=>{
-            console.log(res.data);
-            const {token} = res.data;
-            localStorage.setItem('jwtToken', token);
-            setAuthToken(token);
-            const decoded = jwt_decode(token);
-            dispatch(setCurrentUser(decoded));
-            //return data.token // JWT token
-            // osolesh ine ke toye db e browser set esh koni ino
-            // aval token check koni age bod login nakoni
-            // age nabod login koni
-        })
-        .catch(err => {
-            //console.log('AUTH FAILED', err)
-           dispatch({
-               type: GET_ERRORS,
-               payload: err.status
-            });
-            // action failure
-        })
+            .then(res => {
+                const {token} = res.data;
+                localStorage.setItem('jwtToken', token);
+                setAuthToken(token);
+                const decoded = jwt_decode(token);
+                dispatch(setCurrentUser(decoded));
+                //return data.token // JWT token
+                // osolesh ine ke toye db e browser set esh koni ino
+                // aval token check koni age bod login nakoni
+                // age nabod login koni
+            })
+            .catch(err => {
+                console.log('AUTH FAILED', err);
+                dispatch({
+                    type: GET_ERRORS,
+                    payload: err.status
+                });
+                // action failure
+            })
+    }
 }
 
 // action seda zade mishe

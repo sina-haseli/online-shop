@@ -19,7 +19,7 @@ class ConnectedLogin extends React.Component {
             email: '',
             password: '',
             errors: {}
-        }
+        };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -31,13 +31,14 @@ class ConnectedLogin extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault();
+       // e.preventDefault();
         const user = {
             email: this.state.email,
             password: this.state.password,
         };
         this.props.login(user);
     }
+
 
     componentWillReceiveProps(nextProps) {
 
@@ -63,7 +64,7 @@ class ConnectedLogin extends React.Component {
                             })}
                             name="email"
                             onChange={ this.handleInputChange }
-                            value={ this.state.email }
+                            defaultValue={ this.state.email }
                         />
                         {errors.email && (<div className="invalid-feedback">{errors.email}</div>)}
                     </div>
@@ -76,7 +77,7 @@ class ConnectedLogin extends React.Component {
                             })}
                             name="password"
                             onChange={ this.handleInputChange }
-                            value={ this.state.password }
+                            defaultValue={ this.state.password }
                         />
                         {errors.password && (<div className="invalid-feedback">{errors.password}</div>)}
                     </div>
@@ -95,11 +96,13 @@ class ConnectedLogin extends React.Component {
 
 ConnectedLogin.propTypes = {
     errors: PropTypes.object,
-    email:PropTypes.any.isRequired
+    email:PropTypes.string,
+    password:PropTypes.any
 };
 
 const mapStateToProps = (state) => ({
-    errors: state.errors
+    errors: state.errors,
+    auth:state.auth,
 });
 const Login = withRouter(connect(mapStateToProps, {login})(ConnectedLogin));
 

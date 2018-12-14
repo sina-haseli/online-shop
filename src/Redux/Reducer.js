@@ -9,6 +9,7 @@ import isEmpty from '../Validation/Is-empty';
  */
 const initialState = {
     loggedInUser: null,
+    isAuthenticated: false,
     user: {}
 
 };
