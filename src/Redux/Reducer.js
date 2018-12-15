@@ -19,8 +19,8 @@ const rootReducer = (state = initialState, action) => {
     switch (action.type) {
 
 
-        case CONSTANTS.SET_LOGGED_IN_USER:
-            return { ...state, loggedInUser: action.payload };
+       /* case CONSTANTS.SET_LOGGED_IN_USER:
+            return { ...state, loggedInUser: action.payload };*/
 
         case SET_CURRENT_USER:
             return {

@@ -1,5 +1,5 @@
 import * as CONSTANTS from  "./Constants";
-import Axios from 'axios';
+import Axios, {CancelTokenSource as data} from 'axios';
 import {applyMiddleware as dispatch} from "redux";
 import {GET_ERRORS, SET_CURRENT_USER} from "./Constants";
 import setAuthToken from '../setAuthToken';
@@ -17,31 +17,23 @@ const axios = Axios.create({
 // bara hamin bayad aval redux thunk piade sazi koni
 // ke bad az in state user set koni
 // valy alan ino ejra migiram ke API call ro bebini
-export function login(email, password) {
-    return function (dispatch) {
-        return axios.post('https://api.parand-computer.ir/v1/users/login', {email, password})
-        //.then(({data}) => {
-            .then(res => {
-                const {token} = res.data;
-                localStorage.setItem('jwtToken', token);
-                setAuthToken(token);
-                const decoded = jwt_decode(token);
-                dispatch(setCurrentUser(decoded));
-                //return data.token // JWT token
-                // osolesh ine ke toye db e browser set esh koni ino
-                // aval token check koni age bod login nakoni
-                // age nabod login koni
-            })
-            .catch(err => {
-                console.log('AUTH FAILED', err);
-                dispatch({
-                    type: GET_ERRORS,
-                    payload: err.status
-                });
-                // action failure
-            })
-    }
-}
+export const login = (user) => dispatch => {
+    axios.post('v1/users/login', user)
+        .then(res => {
+            const { token } = res.data;
+            localStorage.setItem('jwtToken', token);
+            setAuthToken(token);
+            const decoded = jwt_decode(token);
+            dispatch(setCurrentUser(decoded));
+            console.log(token);
+        })
+        .catch(err => {
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            });
+        });
+};
 
 // action seda zade mishe
 // khode in action 2 ta action dg ersal momkene bokone

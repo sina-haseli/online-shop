@@ -31,7 +31,7 @@ class ConnectedLogin extends React.Component {
     }
 
     handleSubmit(e) {
-       // e.preventDefault();
+        e.preventDefault();
         const user = {
             email: this.state.email,
             password: this.state.password,
@@ -102,7 +102,6 @@ ConnectedLogin.propTypes = {
 
 const mapStateToProps = (state) => ({
     errors: state.errors,
-    auth:state.auth,
 });
 const Login = withRouter(connect(mapStateToProps, {login})(ConnectedLogin));
 
