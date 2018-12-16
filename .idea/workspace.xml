@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="48894967-c549-4721-9cd5-65772e613886" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/Reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Reducer.js" afterDir="false" />
-    </list>
+    <list default="true" id="48894967-c549-4721-9cd5-65772e613886" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -21,7 +15,7 @@
     <session id="-214697636">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="19" />
+          <entry key="project.closed" value="20" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.3" value="1" />
@@ -59,7 +53,7 @@
         <counts>
           <entry key="html" value="5" />
           <entry key="js" value="6800" />
-          <entry key="txt" value="36" />
+          <entry key="txt" value="42" />
           <entry key="vmoptions" value="1" />
         </counts>
       </usages-collector>
@@ -67,7 +61,7 @@
         <counts>
           <entry key="HTML" value="5" />
           <entry key="JavaScript" value="6800" />
-          <entry key="PLAIN_TEXT" value="37" />
+          <entry key="PLAIN_TEXT" value="43" />
         </counts>
       </usages-collector>
     </session>
@@ -309,7 +303,7 @@
       <workItem from="1544960001990" duration="1677000" />
       <workItem from="1544976723458" duration="1388000" />
       <workItem from="1544978210109" duration="537000" />
-      <workItem from="1544987524718" duration="867000" />
+      <workItem from="1544987524718" duration="1080000" />
     </task>
     <task id="LOCAL-00001" summary="Hi">
       <created>1544702217759</created>
@@ -346,11 +340,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544961455239</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="commit">
+      <created>1544988424950</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1544988424951</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45185000" />
+    <option name="totallyTimeSpent" value="45398000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -363,7 +364,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2628205" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -396,7 +396,8 @@
     <MESSAGE value="Hi" />
     <MESSAGE value="COMMIT" />
     <MESSAGE value="REGISTER BUTTON" />
-    <option name="LAST_COMMIT_MESSAGE" value="REGISTER BUTTON" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/package.json">
