@@ -8,6 +8,7 @@ import {login} from '../../Redux/Actions';
 import classnames from 'classnames';
 
 import './Login.css';
+import Link from "react-router-dom/es/Link";
 
 
 
@@ -23,6 +24,7 @@ class ConnectedLogin extends React.Component {
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
 
     handleInputChange(e) {
         this.setState({
@@ -85,6 +87,9 @@ class ConnectedLogin extends React.Component {
                         <button type="submit" className="btn btn-primary">
                             Login User
                         </button>
+                    </div>
+                    <div className="form-group">
+                        <a className="btn btn-primary" href="../Register/Register.js" role="button">Register</a>
                     </div>
                 </form>
             </div>
