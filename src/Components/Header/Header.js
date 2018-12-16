@@ -8,11 +8,10 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { showCartDlg, toggleMenu, setLoggedInUser } from "../../Redux/Actions"
+import {showCartDlg, toggleMenu, setLoggedInUser, setCurrentUser} from "../../Redux/Actions"
 import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
 import cartImage from "../../Images/DeomiLogo.png"
-import Auth from "../../Auth"
 import { categories } from "../../Data"
 import Person from '@material-ui/icons/PersonOutline';
 import Avatar from '@material-ui/core/Avatar';
@@ -82,7 +81,7 @@ class ConnectedHeader extends Component {
                         <IconButton aria-label="Cart" onClick={() => {
                             this.props.dispatch(showCartDlg(true))
                         }}>
-                            <Badge badgeContent={"1"} color="primary">
+                            <Badge badgeContent={"0"} color="primary">
                                 <ShoppingCartIcon />
                             </Badge>
                         </IconButton>
@@ -117,11 +116,10 @@ class ConnectedHeader extends Component {
                             Pending Order
                         </MenuItem>
                         <MenuItem onClick={() => {
-                            Auth.signout(() => {
-                                this.props.dispatch(setLoggedInUser(null))
-                                this.props.history.push('/');
-                            })
-                            this.setState({ anchorEl: null });
+                            this.props.dispatch(setCurrentUser(null));
+                            this.props.history.push('/');
+
+                             this.setState({ anchorEl: null });
                         }}>Logout</MenuItem>
                     </Menu>
                 </div>

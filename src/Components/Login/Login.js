@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 //import Auth from '../../Auth';
 
-import {login} from '../../Redux/Actions';
+import {login, setCurrentUser} from '../../Redux/Actions';
 import classnames from 'classnames';
 
 import './Login.css';
-import Link from "react-router-dom/es/Link";
+
 
 
 
@@ -19,7 +19,8 @@ class ConnectedLogin extends React.Component {
         this.state = {
             email: '',
             password: '',
-            errors: {}
+            errors: {},
+            redirectToReferrer: false
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -53,6 +54,12 @@ class ConnectedLogin extends React.Component {
 
     render() {
         const {errors} = this.state;
+        const { from } = this.props.location.state || { from: { pathname: '/' } }
+
+        if (this.state.redirectToReferrer === true) {
+            return <Redirect to={from} />
+        }
+
         return(
             <div className="container" style={{ marginTop: '50px', width: '700px'}}>
                 <h2 style={{marginBottom: '40px'}}>Login</h2>
@@ -84,7 +91,12 @@ class ConnectedLogin extends React.Component {
                         {errors.password && (<div className="invalid-feedback">{errors.password}</div>)}
                     </div>
                     <div className="form-group">
-                        <button type="submit" className="btn btn-primary">
+                        <button type="submit" className="btn btn-primary" onClick={()=> {
+                            //this.props.dispatch(setCurrentUser({email: user.email}));
+                            this.setState(()=>({
+                                redirectToReferrer: true
+                            }))
+                        }}>
                             Login User
                         </button>
                     </div>
