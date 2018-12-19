@@ -14,8 +14,8 @@ import './Login.css';
 
 class ConnectedLogin extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             email: '',
             password: '',

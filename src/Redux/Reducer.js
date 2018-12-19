@@ -1,7 +1,7 @@
 import * as CONSTANTS from "./Constants";
 import {SET_CURRENT_USER} from "./Constants";
 import isEmpty from '../Validation/Is-empty';
-import {SET_LOGGED_IN_USER} from "./Constants";
+import {SET_LOGGED_IN_USER,TOGGLE_MENU} from "./Constants";
 
 
 /*
@@ -9,6 +9,7 @@ import {SET_LOGGED_IN_USER} from "./Constants";
  * by mulitple components.
  */
 const initialState = {
+    showMenu:true,
     loggedInUser: null,
     isAuthenticated: false,
     user: {}
@@ -33,7 +34,14 @@ const rootReducer = (state = initialState, action) => {
         case    SET_LOGGED_IN_USER:
             return{
                 ...state,
+                _isAuthenticated:isEmpty(action.payload),
                 loggedInUser: action.payload
+            };
+
+        case    TOGGLE_MENU:
+            return{
+                ...state,
+                showMenu: !state.showMenu
             };
 
         default:

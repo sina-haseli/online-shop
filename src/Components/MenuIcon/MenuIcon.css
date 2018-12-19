@@ -1,0 +1,13 @@
+body {
+    color: white;
+    background: #FFC400;
+    font-size: 10em;
+}
+
+#render {
+    position: absolute;
+    height: 1em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -17,11 +17,13 @@ import Person from '@material-ui/icons/PersonOutline';
 import Avatar from '@material-ui/core/Avatar';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import setAuthToke from '../../setAuthToken';
+import HamburgerButton from "../MenuIcon/MenuIcon";
 
 
-//const mapStateToProps = state => {
-//    return { nrOfItemsInCard: state.cartItems.length, loggedInUser: state.loggedInUser, };
-//};
+const mapStateToProps = state => {
+   return {  loggedInUser: state.loggedInUser, };
+};
 
 const categoryOptions = categories.map(x => {
     return { value: x, label: x }
@@ -32,7 +34,7 @@ class ConnectedHeader extends Component {
         searchTerm: "",
         anchorEl: null,
         categoryFilter: categoryOptions[0]
-    }
+    };
 
     render() {
 
@@ -45,7 +47,7 @@ class ConnectedHeader extends Component {
                         <IconButton onClick={() => {
                             this.props.dispatch(toggleMenu())
                         }}>
-                            <MenuIcon size="medium" />
+                            <HamburgerButton size="medium" />
                         </IconButton></div>
 
                     <img src={cartImage} alt={"Logo"} style={{ marginTop: 10, marginLeft: 10 }} width="64" height="64" />
@@ -116,10 +118,11 @@ class ConnectedHeader extends Component {
                             Pending Order
                         </MenuItem>
                         <MenuItem onClick={() => {
-                            this.props.dispatch(setCurrentUser(null));
-                            this.props.history.push('/');
-
-                             this.setState({ anchorEl: null });
+                            if (setAuthToke()!==true) {
+                                this.props.dispatch(setLoggedInUser(null));
+                                this.props.history.push('/');
+                            }
+                            this.setState({ anchorEl: null });
                         }}>Logout</MenuItem>
                     </Menu>
                 </div>
@@ -129,5 +132,5 @@ class ConnectedHeader extends Component {
 }
 
 
-const Header = withRouter(connect(/*mapStateToProps*/)(ConnectedHeader));
+const Header = withRouter(connect(mapStateToProps)(ConnectedHeader));
 export default Header;

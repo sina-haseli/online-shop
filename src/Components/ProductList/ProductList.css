@@ -1,0 +1,22 @@
+
+
+.circular{
+    position:absolute;
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+}
+.product-list{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+}
+.product-list-header {
+    height: 50px;
+    width: 100%;
+    display: flex;
+}
+
+.react-dropdown {
+    font-size: 13px;
+}
