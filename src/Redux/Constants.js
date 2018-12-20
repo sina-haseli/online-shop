@@ -1,5 +1,5 @@
 export const SET_LOGGED_IN_USER = "SET_LOGGED_IN_USER";
-
+export const ADD_ITEM_IN_CART = "ADD_ITEM_IN_CART";
 
 
 // in jash inja nist ama kirete

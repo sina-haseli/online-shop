@@ -5,7 +5,8 @@ import Header from './Components/Header/Header';
 import { Switch, Route } from 'react-router-dom'
 import Login from "./Components/Login/Login"
 import {login, getProducts} from './Redux/Actions'
-import Register from "./Components/Register/Register"; // in rah e dorost e action nist, valy kirete
+import Register from "./Components/Register/Register";
+import ProductList from "./Components/ProductList/ProductList"; // in rah e dorost e action nist, valy kirete
 
 
 class App extends Component {
@@ -19,6 +20,8 @@ class App extends Component {
           <Menu/>
             <div className="content">
               <Switch>
+                <Route path='/search/' component={ProductList}/>
+                <Route exact path="/" component={ProductList} />
                 <Route path='/about' render={() => <div>About us</div>} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register}/>

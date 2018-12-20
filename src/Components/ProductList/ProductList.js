@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import Item from '../Item/Item';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import 'ProductList.css';
+import './ProductList.css';
 import queryString from 'query-string';
 import Dropdown from 'react-dropdown';
 import FromControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Tooltip from '@material-ui/core/Tooltip';
+import Paging from '../Paging/Paging';
+import PriceDialog from '../PriceDialog/PriceDialog';
+import Api from "../../Api"
 
 
 
@@ -24,16 +27,16 @@ class ProductList extends Component{
             itemsPerPage: null,
             wholeDataLength: null,
             items:[]
-        }
+        };
 
-        this.getParamFromProps = this.getParamFromProps.bind(this);
+        this.getPramFromProps = this.getPramFromProps.bind(this);
         this.updateURLAndRedirect = this.updateURLAndRedirect.bind(this);
 
     }
 
     //convert given object to query string :)
     objectToQueryString(params) {
-        var esc = endcodeURLComponent;
+        var esc = encodeURIComponent;
         var query = Object.keys(params)
             .map(k => esc(k) + '=' + esc(params[k] !== undefined ? params[k] : ""))
             .join('&');
@@ -85,8 +88,24 @@ class ProductList extends Component{
 
 
     fetchData (props = this.props) {
-        this.setState((ps)=>({infinishedTasks:ps.unfinishedTasks+1}))
+        this.setState((ps)=>({unfinishedTasks:ps.unfinishedTasks+1}))
         //i don't know what should i do here but i think use get product from backend
+        Api.searchData({
+            category: this.getPramFromProps("category", props),
+            term: this.getPramFromProps("term", props),
+            page: this.getPramFromProps("page", props),
+            minPrice: this.getPramFromProps("minPrice", props),
+            maxPrice: this.getPramFromProps("maxPrice", props),
+            sortValue: this.getPramFromProps("sortValue", props),
+            usePriceFilter: this.getPramFromProps("usePriceFilter", props),
+        }).then((data) => {
+            this.setState((ps) => ({
+                items: data.data,
+                unfinishedTasks: ps.unfinishedTasks - 1,
+                itemsPerPage: data.itemsPerPage,
+                wholeDataLength: data.totalLength
+            }))
+        })
     }
 
 
@@ -173,12 +192,13 @@ class ProductList extends Component{
                           })}
                   </div>
                   {this.state.unfinishedTasks ===0 &&
-                      <Paging
+                     <Paging
                            getParamFromProps={this.getPramFromProps}
                            updateURLAndRedirect={this.updateURLAndRedirect}
                            itemPrePage={this.state.itemsPerPage}
                            wholeDataLength={this.state.wholeDataLength}
-                      />}
+                      />
+                      }
               </div>
               <PriceDialog
                    open={this.state.openPriceDialog}
