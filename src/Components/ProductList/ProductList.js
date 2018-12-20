@@ -90,7 +90,7 @@ class ProductList extends Component{
     fetchData (props = this.props) {
         this.setState((ps)=>({unfinishedTasks:ps.unfinishedTasks+1}))
         //i don't know what should i do here but i think use get product from backend
-        Api.searchData({
+      /*  Api.searchData({
             category: this.getPramFromProps("category", props),
             term: this.getPramFromProps("term", props),
             page: this.getPramFromProps("page", props),
@@ -105,7 +105,7 @@ class ProductList extends Component{
                 itemsPerPage: data.itemsPerPage,
                 wholeDataLength: data.totalLength
             }))
-        })
+        }) */
     }
 
 
