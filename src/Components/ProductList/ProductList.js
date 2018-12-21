@@ -11,6 +11,10 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Paging from '../Paging/Paging';
 import PriceDialog from '../PriceDialog/PriceDialog';
 import Api from "../../Api"
+import axios from 'axios';
+import {getProducts} from '../../Redux/Actions';
+import {withRouter} from "react-router-dom";
+import connect from "react-redux/es/connect/connect";
 
 
 
@@ -110,7 +114,11 @@ class ProductList extends Component{
 
 
     componentDidMount() {
-        this.fetchData();
+        axios.get(`https://api.parand-computer.ir/v1/products`)
+            .then(/*res => this.setState({ posts: res.data })*/({data})=>{
+                console.log(data)
+            } )
+            .catch(err => console.log(err))
     }
 
     componentWillReceiveProps(nextProps){
@@ -181,7 +189,7 @@ class ProductList extends Component{
               <div style={{flex:1,display:"flex", flexDirection:"column"}}>
                   <div style={{flex:1}}>
                       {this.state.unfinishedTasks !==0?
-                          <CircularProgress classes="circular"/> :
+                          <CircularProgress /> :
                           this.state.items.map(item => {
                               return (
                                   <Item
@@ -219,6 +227,8 @@ class ProductList extends Component{
     }
 
 }
-
-
-export default ProductList;
+const mapStateToProps = (state) => ({
+    errors: state.errors,
+});
+const ProductList0 = withRouter(connect(mapStateToProps,{getProducts})(ProductList));
+export default ProductList0;

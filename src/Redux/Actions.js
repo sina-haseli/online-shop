@@ -38,8 +38,8 @@ export const login = (user) => dispatch => {
 // action seda zade mishe
 // khode in action 2 ta action dg ersal momkene bokone
 // bara balee ham hamine
-/*export function getProducts() {
-    return axios.get('/products')
+export const getProducts = () => dispatch =>  {
+    return axios.get('https://api.parand-computer.ir/v1/products')
         .then(({data}) => {
             console.log(data); // array az product hast
 
@@ -47,9 +47,15 @@ export const login = (user) => dispatch => {
             // ke on action state ro update mikone products: [] <
             return data
         })
-        .catch(err => {}) // action e failure
-}
-*/
+        .catch(err =>  {
+            dispatch(
+                {
+                    type: GET_ERRORS,
+                    payload: err.status
+                })
+        }) // action e failure
+};
+
 
 export const registerUser = (user, history) => dispatch => {
     axios.post('https://api.parand-computer.ir/v1/users', user)
