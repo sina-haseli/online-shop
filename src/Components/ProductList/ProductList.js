@@ -112,13 +112,21 @@ class ProductList extends Component{
         }) */
     }
 
+    componentWillMount() {
+        axios.get(`https://api.parand-computer.ir/v1/products`)
+            .then(res=>this.setState({items:res.data}))
+            .catch((error)=>{
+                error.alert("!!!");
+                console.log(error);
+            });
+    }
 
     componentDidMount() {
         axios.get(`https://api.parand-computer.ir/v1/products`)
-            .then(/*res => this.setState({ posts: res.data })*/({data})=>{
-                console.log(data)
-            } )
-            .catch(err => console.log(err))
+            .then(res=>this.setState({items:res.data}))
+            .catch((error)=>{
+                error.alert("there is something wrong you fucking bitch !!!");
+            });
     }
 
     componentWillReceiveProps(nextProps){
@@ -127,7 +135,7 @@ class ProductList extends Component{
 
     handleSortChange = (e) => {
         this.updateURLAndRedirect({sortValue: e.value})
-    }
+    };
 
     pageTitle() {
         let pageTitle;
@@ -215,7 +223,7 @@ class ProductList extends Component{
                    onChange={(min,max) => this.setState({minDraft:min,maxDraft:max,isDraft:true})}
                    onSave={() => {
                        if (this.state.isDraft){
-                           this.setState({isDraft: false})
+                           this.setState({isDraft: false});
                            this.updateURLAndRedirect({minPrice: this.state.minDraft,maxPrice: this.state.maxDraft},true);
                        }
                        this.setState({openPriceDialog: false})

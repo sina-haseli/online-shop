@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="48894967-c549-4721-9cd5-65772e613886" name="Default Changelist" comment="">
+    <list default="true" id="48894967-c549-4721-9cd5-65772e613886" name="Default Changelist" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/ProductList/ProductList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProductList/ProductList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/Actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Actions.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,16 +18,16 @@
     <session id="-214697636">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="29" />
+          <entry key="project.closed" value="30" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="9" />
-          <entry key="project.open.time.6" value="9" />
+          <entry key="project.open.time.6" value="10" />
           <entry key="project.open.time.7" value="5" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="30" />
+          <entry key="project.opened" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -36,7 +35,7 @@
           <entry key="css" value="11" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="3" />
-          <entry key="js" value="99" />
+          <entry key="js" value="101" />
           <entry key="json" value="2" />
           <entry key="md" value="1" />
           <entry key="ts" value="1" />
@@ -48,7 +47,7 @@
           <entry key="CSS" value="11" />
           <entry key="HTML" value="3" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="99" />
+          <entry key="JavaScript" value="101" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="TypeScript" value="1" />
@@ -58,7 +57,7 @@
         <counts>
           <entry key="css" value="5" />
           <entry key="html" value="5" />
-          <entry key="js" value="14236" />
+          <entry key="js" value="14621" />
           <entry key="txt" value="42" />
           <entry key="vmoptions" value="1" />
         </counts>
@@ -67,7 +66,7 @@
         <counts>
           <entry key="CSS" value="5" />
           <entry key="HTML" value="5" />
-          <entry key="JavaScript" value="14236" />
+          <entry key="JavaScript" value="14621" />
           <entry key="PLAIN_TEXT" value="43" />
         </counts>
       </usages-collector>
@@ -78,61 +77,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/ProductList/ProductList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1827">
-              <caret line="191" column="44" selection-start-line="191" selection-start-column="44" selection-end-line="191" selection-end-column="44" />
+            <state relative-caret-position="309">
+              <caret line="121" column="5" lean-forward="true" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Login/Login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="119" column="4" lean-forward="true" selection-start-line="119" selection-end-line="121" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#202#260#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Item/Item.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="759">
-              <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Redux/Actions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="54" column="18" lean-forward="true" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Redux/Constants.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Item/Item.css">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -200,8 +151,9 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="945" />
+    <option name="y" value="6" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -213,7 +165,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -241,26 +192,13 @@
               <item name="online-shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="online-shop" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="Login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="online-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="online-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="ProductList" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="online-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="online-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Redux" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -329,7 +267,8 @@
       <workItem from="1545303569807" duration="3054000" />
       <workItem from="1545309928749" duration="2312000" />
       <workItem from="1545313511772" duration="148000" />
-      <workItem from="1545389134626" duration="2610000" />
+      <workItem from="1545389134626" duration="2626000" />
+      <workItem from="1545565213493" duration="2797000" />
     </task>
     <task id="LOCAL-00001" summary="Hi">
       <created>1544702217759</created>
@@ -401,11 +340,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545313540116</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="commit">
+      <created>1545391753422</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1545391753422</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67695000" />
+    <option name="totallyTimeSpent" value="70508000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -417,9 +363,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2628205" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12961012" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -433,7 +379,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49873737" weight="0.32925472" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5012626" side_tool="true" weight="0.33704117" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49873737" visible="true" weight="0.33704117" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49873737" visible="true" weight="0.33370045" />
       <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.32925472" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -637,15 +583,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Api.js">
+    <entry file="file://$PROJECT_DIR$/src/Redux/Reducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-736">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="161">
+          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Item/Item.css">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Redux/Constants.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -654,10 +597,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Redux/Reducer.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/Item/Item.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
-          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Redux/Actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-368">
+          <caret line="54" column="18" lean-forward="true" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Login/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="119" column="4" selection-start-line="119" selection-end-line="121" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#202#260#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -671,28 +635,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Login/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="119" column="4" lean-forward="true" selection-start-line="119" selection-end-line="121" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#202#260#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Redux/Actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="54" column="18" lean-forward="true" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/ProductList/ProductList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1827">
-          <caret line="191" column="44" selection-start-line="191" selection-start-column="44" selection-end-line="191" selection-end-column="44" />
+        <state relative-caret-position="309">
+          <caret line="121" column="5" lean-forward="true" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
