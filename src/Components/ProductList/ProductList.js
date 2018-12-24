@@ -81,7 +81,7 @@ class ProductList extends Component{
                 return qs.maxPrice || "1000";
             case    'usePriceFilter':
                 return qs.usePriceFilter === "true";
-            case    'sortvalue':
+            case    'sortValue':
                 return qs.sortValue || "lh";
             case    'directCategory':
                 return qs.directcategory === "true";
@@ -91,10 +91,10 @@ class ProductList extends Component{
     }
 
 
-    fetchData (props = this.props) {
-        this.setState((ps)=>({unfinishedTasks:ps.unfinishedTasks+1}))
+     fetchData (props = this.props) {
+        //this.setState((ps)=>({unfinishedTasks:ps.unfinishedTasks+1}))
         //i don't know what should i do here but i think use get product from backend
-      /*  Api.searchData({
+       /*Api.searchData({
             category: this.getPramFromProps("category", props),
             term: this.getPramFromProps("term", props),
             page: this.getPramFromProps("page", props),
@@ -112,7 +112,7 @@ class ProductList extends Component{
         }) */
     }
 
-    componentWillMount() {
+    /*componentWillMount() {
         axios.get(`https://api.parand-computer.ir/v1/products`)
             .then(res=>this.setState({items:res.data}))
             .catch((error)=>{
@@ -121,12 +121,20 @@ class ProductList extends Component{
             });
     }
 
+    */
+
+
     componentDidMount() {
+    this.setState((ps)=>({unfinishedTasks:ps.unfinishedTasks+1}));
         axios.get(`https://api.parand-computer.ir/v1/products`)
-            .then(res=>this.setState({items:res.data}))
-            .catch((error)=>{
-                error.alert("there is something wrong you fucking bitch !!!");
-            });
+            .then(res=>this.setState((ps)=>({items:res.data,
+                unfinishedTasks: ps.unfinishedTasks - 1,
+                itemsPerPage: res.data.itemsPerPage,
+                wholeDataLength: res.data.totalLength
+            })))
+            .catch(err=>{
+              console.log(err)
+            })
     }
 
     componentWillReceiveProps(nextProps){
@@ -170,7 +178,7 @@ class ProductList extends Component{
                       </div>
 
                       {this.getPramFromProps("usePriceFilter") &&
-                          <Tooltip title="Click to change range" diableFocusListener >
+                          <Tooltip title="Click to change range" diablefocuslistener="true" >
                               <Button
                                 style={{marginRight:20, height:10}}
                                 onClick={()=>{

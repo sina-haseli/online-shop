@@ -11,8 +11,8 @@ import ProductList from "./Components/ProductList/ProductList"; // in rah e doro
 
 class App extends Component {
   render() {
-    login('sina', 'password')
-    //   getProducts()
+    login('sina', 'password');
+      getProducts();
     return (
       <div className="app">
           <Header/>

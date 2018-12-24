@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Item.css';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
-import addShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import AddShoppingCart from '@material-ui/icons/AddShoppingCart';
 import { connect } from 'react-redux';
 import { addItemInCart } from '../../Redux/Actions';
 import { withRouter } from 'react-router-dom';
@@ -31,7 +31,7 @@ class ConnectedItem extends Component{
                           e.stopPropagation();
                           this.props.dispatch(addItemInCart({...this.props.item, quantity:1}));
                       }} color="primary" aria-label="Add to shopping cart">
-                          <addShoppingCartIcon/>
+                          <AddShoppingCart/>
 
                       </IconButton>
                   </div>
