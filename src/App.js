@@ -22,13 +22,13 @@ class App extends Component {
           <Menu/>
             <div className="content">
               <CartDialog/>
-              <Switch>
-                <Route path='/search/' component={ProductList}/>
-                <Route exact path="/" component={ProductList} />
-                <Route path='/about' render={() => <div>About us</div>} />
-                <Route path="/login" component={Login} />
-                <Route path="/register" component={Register}/>
-              </Switch>
+                <Switch>
+                  <Route path='/search/' component={ProductList}/>
+                  <Route exact path="/" component={ProductList} />
+                  <Route path='/about' render={() => <div>About us</div>} />
+                  <Route path="/login" component={Login} />
+                  <Route path="/register" component={Register}/>
+                </Switch>
             </div>
           </div>
       </div>

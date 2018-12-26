@@ -109,7 +109,7 @@ class ProductList extends Component{
                 itemsPerPage: data.itemsPerPage,
                 wholeDataLength: data.totalLength
             }))
-        }) */
+        })*/
     }
 
     /*componentWillMount() {
