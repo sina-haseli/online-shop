@@ -3,11 +3,13 @@ import './App.css';
 import Menu from './Components/Menu/Menu';
 import Header from './Components/Header/Header';
 import { Switch, Route } from 'react-router-dom'
+import CartDialog from "./Components/CartDialog/CartDialog";
+//import Order from "./Components/Order/Order"
 import Login from "./Components/Login/Login"
 import {login, getProducts} from './Redux/Actions'
 import Register from "./Components/Register/Register";
 import ProductList from "./Components/ProductList/ProductList"; // in rah e dorost e action nist, valy kirete
-
+import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute"
 
 class App extends Component {
   render() {
@@ -19,6 +21,7 @@ class App extends Component {
         <div className="app-body">
           <Menu/>
             <div className="content">
+              <CartDialog/>
               <Switch>
                 <Route path='/search/' component={ProductList}/>
                 <Route exact path="/" component={ProductList} />

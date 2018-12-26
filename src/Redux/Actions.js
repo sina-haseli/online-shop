@@ -87,3 +87,6 @@ export const setLoggedInUser = (user) => ({ type:  CONSTANTS.SET_LOGGED_IN_USER,
 export const toggleMenu = () => ({ type:  CONSTANTS.TOGGLE_MENU, payload: null });
 export const showCartDlg = status => ({ type:  CONSTANTS.SHOW_CART_DLG, payload: status });
 export const addItemInCart = item => ({ type:  CONSTANTS.ADD_ITEM_IN_CART, payload: item });
+export const setCheckedOutItems = (items) => ({ type:  CONSTANTS.SET_CHECKEDOUT_ITEMS, payload: items });
+export const deleteCartItem = id => ({ type:  CONSTANTS.DELETE_CART_ITEM, payload: id });
+export const updateCartItemQnt = (obj) => ({ type:  CONSTANTS.UPDATE_CART_ITEM_QUANTITY, payload: obj });
