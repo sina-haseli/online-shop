@@ -9,6 +9,7 @@ import {SET_LOGGED_IN_USER,TOGGLE_MENU} from "./Constants";
  * by mulitple components.
  */
 const initialState = {
+    cartItems: [],
     showCartDialog: false,
     checkedOutItems: [],
     showMenu:true,
@@ -42,6 +43,23 @@ const rootReducer = (state = initialState, action) => {
             // Item is not there, add a new item.
             return { ...state, cartItems: state.cartItems.concat(action.payload) }
 
+        }
+
+        case CONSTANTS.UPDATE_CART_ITEM_QUANTITY: {
+            let index = state.cartItems.findIndex(x => x.id === action.payload.id);
+
+            /* Update quantity of certain item in cart */
+            if (index !== -1) {
+                let cloneCartItems = [...state.cartItems];
+                cloneCartItems[index] = {
+                    ...cloneCartItems[index],
+                    quantity: action.payload.quantity
+                };
+
+                return { ...state, cartItems: cloneCartItems }
+            }
+
+            return state;
         }
 
         case CONSTANTS.SHOW_CART_DLG:
