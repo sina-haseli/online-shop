@@ -40,12 +40,13 @@ export const login = (user) => dispatch => {
 // bara balee ham hamine
 export const getProducts = () => dispatch =>  {
     return axios.get('https://api.parand-computer.ir/v1/products')
-        .then(({data}) => {
-            console.log(data); // array az product hast
+        .then(res => {
+            console.log(res.data); // array az product hast
+
 
             // action e success ba data e in
             // ke on action state ro update mikone products: [] <
-            return data
+            return data;
         })
         .catch(err =>  {
             dispatch(

@@ -6,6 +6,9 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom'
 
+/*
+ * Represents a single item row in the table.
+ */
 const CartRow = (props) => {
     let {item} = props;
     return (
@@ -13,11 +16,13 @@ const CartRow = (props) => {
             <TableCell>
                 <Link to={`/details/${item.id}`}>
                     <div onClick={() => {
-                        //   User will be navigated to item URL by clicking this item due to link above,
-                        //   and also we close this dialog.
+                        /*
+                         * User will be navigated to item URL by clicking this item due to link above,
+                         * and also we close this dialog.
+                         */
                         props.dispatch(showCartDlg(false))
                     }}>
-                        {item.name}
+                        {item.title}
                     </div>
                 </Link>
 
@@ -31,7 +36,7 @@ const CartRow = (props) => {
                                let quantity=parseInt(e.target.value, 10);
                                if (quantity < 0) return;
 
-                               // Update quantity for this cart item.
+                               /* Update quantity for this cart item. */
                                props.dispatch(updateCartItemQnt({
                                    id: item.id,
                                    quantity
@@ -42,7 +47,7 @@ const CartRow = (props) => {
                 <Button
                     color="secondary"
                     onClick={() => {
-                        // Delete this cart item.
+                        /* Delete this cart item. */
                         props.dispatch(deleteCartItem(item.id))
                     }}>
                     Delete

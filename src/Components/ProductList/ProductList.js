@@ -127,19 +127,24 @@ class ProductList extends Component{
     componentDidMount() {
     this.setState((ps)=>({unfinishedTasks:ps.unfinishedTasks+1}));
         axios.get(`https://api.parand-computer.ir/v1/products`)
-            .then(res=>this.setState((ps)=>({items:res.data,
-                unfinishedTasks: ps.unfinishedTasks - 1,
-                itemsPerPage: res.data.itemsPerPage,
-                wholeDataLength: res.data.totalLength
+            .then(res=> this.setState((ps)=>({items:res.data,
+                unfinishedTasks: ps.unfinishedTasks - 1
             })))
             .catch(err=>{
               console.log(err)
             })
     }
+    UNSAFE_componentWillReceiveProps(nextProps){
+        if (nextProps.id !== this.props.item.id) {
+            axios.get(`https://api.parand-computer.ir/v1/products`)
+                .then(res=>({item:res.data}))
+                .catch(error=>{console.log(error)})
+        }
+    };
 
-    componentWillReceiveProps(nextProps){
+    /*componentWillReceiveProps(nextProps){
         this.fetchData(nextProps);
-    }
+    }*/
 
     handleSortChange = (e) => {
         this.updateURLAndRedirect({sortValue: e.value})

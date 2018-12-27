@@ -13,7 +13,6 @@ import CartRow from "./CartRow"
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCartOutlined';
 
 
-
 const mapStateToProps = state => {
     return { open: state.showCartDialog, items: state.cartItems };
 };
@@ -24,8 +23,9 @@ class ConnectedCartDialog extends Component {
     render() {
 
         /* Total price of items in the cart */
-        let totalPrice = 0;
-
+        let totalPrice = this.props.items.reduce((accumulator, item) => {
+            return accumulator + item.price ;
+        }, 0);
 
 
         return (
@@ -54,8 +54,8 @@ class ConnectedCartDialog extends Component {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {this.props.items.map((item, index) => {
-                                    return (<CartRow item={item} key={item.id} {...this.props.items} />)
+                                {this.state.items.map((item, index) => {
+                                    return (<CartRow item={item} key={item.id} {...this.state} />)
                                 })}
                             </TableBody>
                         </Table>
@@ -70,7 +70,7 @@ class ConnectedCartDialog extends Component {
                                 disabled={totalPrice === 0}
                                 onClick={() => {
                                     this.props.dispatch(showCartDlg(false));
-                                    this.props.dispatch(setCheckedOutItems(this.props.items));
+                                    this.props.dispatch(setCheckedOutItems(this.props.items))
                                     this.props.history.push('/order');
                                 }}>Checkout</Button>
                     </div>
