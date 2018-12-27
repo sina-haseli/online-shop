@@ -14,7 +14,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCartOutlined';
 
 
 const mapStateToProps = state => {
-    return { open: state.showCartDialog, items: state.cartItems };
+    return { open: state.showCartDialog || false, items: state.cartItems || [] };
 };
 
 
@@ -24,9 +24,8 @@ class ConnectedCartDialog extends Component {
 
         /* Total price of items in the cart */
         let totalPrice = this.props.items.reduce((accumulator, item) => {
-            return accumulator + item.price ;
+            return accumulator + (item.price * item.quantity);
         }, 0);
-
 
         return (
             <div>
@@ -54,9 +53,7 @@ class ConnectedCartDialog extends Component {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {this.state.items.map((item, index) => {
-                                    return (<CartRow item={item} key={item.id} {...this.state} />)
-                                })}
+                                {this.props.items.map((item) => <CartRow item={item} key={item._id} {...this.state} />)}
                             </TableBody>
                         </Table>
                     </div>

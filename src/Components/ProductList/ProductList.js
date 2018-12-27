@@ -214,7 +214,7 @@ class ProductList extends Component{
                           this.state.items.map(item => {
                               return (
                                   <Item
-                                      key={item.id}
+                                      key={item._id}
                                       item={item}
                                   />
                               )

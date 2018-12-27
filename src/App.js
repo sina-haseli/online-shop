@@ -21,7 +21,7 @@ class App extends Component {
         <div className="app-body">
           <Menu/>
             <div className="content">
-               <CartDialog/>
+              <CartDialog/>
                 <Switch>
                   <Route path='/search/' component={ProductList}/>
                   <Route exact path="/" component={ProductList} />

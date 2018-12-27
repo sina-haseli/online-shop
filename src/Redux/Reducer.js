@@ -24,7 +24,7 @@ const rootReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case CONSTANTS.ADD_ITEM_IN_CART: {
-
+            state.cartItems = state.cartItems || []
             // User wants to add item in cart, let's first find if such item is already in cart.
             let index = state.cartItems.findIndex(x => x.id === action.payload.id);
 

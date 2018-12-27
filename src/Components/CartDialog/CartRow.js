@@ -14,7 +14,7 @@ const CartRow = (props) => {
     return (
         <TableRow>
             <TableCell>
-                <Link to={`/details/${item.id}`}>
+                <Link to={`/details/${item._id}`}>
                     <div onClick={() => {
                         /*
                          * User will be navigated to item URL by clicking this item due to link above,
@@ -38,7 +38,7 @@ const CartRow = (props) => {
 
                                /* Update quantity for this cart item. */
                                props.dispatch(updateCartItemQnt({
-                                   id: item.id,
+                                   _id: item._id,
                                    quantity
                                }))
                            }} />
@@ -48,7 +48,7 @@ const CartRow = (props) => {
                     color="secondary"
                     onClick={() => {
                         /* Delete this cart item. */
-                        props.dispatch(deleteCartItem(item.id))
+                        props.dispatch(deleteCartItem(item._id))
                     }}>
                     Delete
                 </Button>
@@ -58,4 +58,4 @@ const CartRow = (props) => {
     )
 }
 
-export default CartRow;
+export default CartRow ;
