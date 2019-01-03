@@ -19,7 +19,7 @@ import HamburgerButton from "../MenuIcon/MenuIcon";
 
 
 const mapStateToProps = state => {
-   return { nrOfItemsInCard: 0,  loggedInUser: state.loggedInUser, };
+   return { nrOfItemsInCard:state.size || 0,  loggedInUser: state.loggedInUser };
 };
 
 
@@ -62,7 +62,7 @@ class ConnectedHeader extends Component {
                         <IconButton aria-label="Cart" onClick={() => {
                             this.props.dispatch(showCartDlg(true))
                         }}>
-                            <Badge badgeContent={this.props.nrOfItemsInCard || 0} color="primary">
+                            <Badge badgeContent={this.props.nrOfItemsInCard } color="primary">
                                 <ShoppingCartIcon />
                             </Badge>
                         </IconButton>

@@ -15,7 +15,8 @@ const initialState = {
     showMenu:true,
     loggedInUser: null,
     isAuthenticated: false,
-    user: {}
+    user: {},
+    size: [],
 
 };
 
@@ -25,7 +26,7 @@ const rootReducer = (state = initialState, action) => {
 
         case CONSTANTS.ADD_ITEM_IN_CART: {
             state.cartItems = state.cartItems || [];
-            state.cartItems.length=state.cartItems.length||0;
+            state.cartItems.length=state.size || [];
             // User wants to add item in cart, let's first find if such item is already in cart.
             let index = state.cartItems.findIndex(x => x._id === action.payload._id);
 
