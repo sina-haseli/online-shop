@@ -68,7 +68,9 @@ const rootReducer = (state = initialState, action) => {
             return { ...state, showCartDialog: action.payload };
 
         case CONSTANTS.DELETE_CART_ITEM:
-            return { ...state, cartItems: state.cartItems.filter(x => x._id !== action.payload) };
+            console.log('>>>> pl', action.payload)
+            console.log('>>> items', state.cartItems)
+            return { ...state, cartItems: state.cartItems.filter(item => item._id !== action.payload) };
         case CONSTANTS.SET_CHECKEDOUT_ITEMS:
             return { ...state, checkedOutItems: action.payload };
 
