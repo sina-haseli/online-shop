@@ -19,6 +19,7 @@ import HamburgerButton from "../MenuIcon/MenuIcon";
 
 
 const mapStateToProps = state => {
+    console.log('>>> state', state)
    return { nrOfItemsInCard:state.size || 0,  loggedInUser: state.loggedInUser };
 };
 
