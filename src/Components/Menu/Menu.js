@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import "./Menu.css";
 import { NavLink } from 'react-router-dom'
 import queryString from 'query-string'
-import { menuItems } from "../../Data"
+import {menuItems} from '../../Data'
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom'
 

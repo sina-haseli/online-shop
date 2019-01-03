@@ -3,7 +3,7 @@ export const ADD_ITEM_IN_CART = "ADD_ITEM_IN_CART";
 
 
 // in jash inja nist ama kirete
-export const BASE_URL = 'https://api.parand-computer.ir/';
+export const BASE_URL = 'https://deomi.liara.run/';
 export const TOGGLE_MENU = "TOGGLE_MENU";
 export const SHOW_CART_DLG = "SHOW_CART_DLG";
 export const DELETE_CART_ITEM = "DELETE_CART_ITEM";

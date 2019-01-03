@@ -4,6 +4,7 @@ import Menu from './Components/Menu/Menu';
 import Header from './Components/Header/Header';
 import { Switch, Route } from 'react-router-dom'
 import CartDialog from "./Components/CartDialog/CartDialog";
+import Order from "./Components/Order/Order"
 //import Order from "./Components/Order/Order"
 import Login from "./Components/Login/Login"
 import {login, getProducts} from './Redux/Actions'
@@ -28,6 +29,7 @@ class App extends Component {
                   <Route path='/about' render={() => <div>About us</div>} />
                   <Route path="/login" component={Login} />
                   <Route path="/register" component={Register}/>
+                  <ProtectedRoute path='/order' component={Order} />
                 </Switch>
             </div>
           </div>

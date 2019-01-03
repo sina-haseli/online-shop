@@ -10,7 +10,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Tooltip from '@material-ui/core/Tooltip';
 import Paging from '../Paging/Paging';
 import PriceDialog from '../PriceDialog/PriceDialog';
-import Api from "../../Api"
 import axios from 'axios';
 import {getProducts} from '../../Redux/Actions';
 import {withRouter} from "react-router-dom";
@@ -126,7 +125,7 @@ class ProductList extends Component{
 
     componentDidMount() {
     this.setState((ps)=>({unfinishedTasks:ps.unfinishedTasks+1}));
-        axios.get(`https://api.parand-computer.ir/v1/products`)
+        axios.get(`https://deomi.liara.run/v1/products`)
             .then(res=> this.setState((ps)=>({items:res.data,
                 unfinishedTasks: ps.unfinishedTasks - 1
             })))
@@ -134,13 +133,9 @@ class ProductList extends Component{
               console.log(err)
             })
     }
-    UNSAFE_componentWillReceiveProps(nextProps){
-        if (nextProps.id !== this.props.item.id) {
-            axios.get(`https://api.parand-computer.ir/v1/products`)
-                .then(res=>({item:res.data}))
-                .catch(error=>{console.log(error)})
-        }
-    };
+    //componentWillReceiveProps(nextProps){
+    //    this.props.items(nextProps)
+    //};
 
     /*componentWillReceiveProps(nextProps){
         this.fetchData(nextProps);

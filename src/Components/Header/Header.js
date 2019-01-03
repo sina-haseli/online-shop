@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import "./Header.css";
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from "@material-ui/icons/Menu"
 import Badge from '@material-ui/core/Badge';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -12,7 +11,6 @@ import {showCartDlg, toggleMenu, setLoggedInUser, setCurrentUser} from "../../Re
 import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
 import cartImage from "../../Images/DeomiLogo.png"
-import { categories } from "../../Data"
 import Person from '@material-ui/icons/PersonOutline';
 import Avatar from '@material-ui/core/Avatar';
 import Menu from '@material-ui/core/Menu';
@@ -25,15 +23,11 @@ const mapStateToProps = state => {
    return {  loggedInUser: state.loggedInUser, };
 };
 
-const categoryOptions = categories.map(x => {
-    return { value: x, label: x }
-});
 
 class ConnectedHeader extends Component {
     state = {
         searchTerm: "",
         anchorEl: null,
-        categoryFilter: categoryOptions[0]
     };
 
     render() {
@@ -59,23 +53,9 @@ class ConnectedHeader extends Component {
                         }}
                         style={{ marginLeft: 40, width: 250, marginTop: 10 }}
                     />
-                    <div style={{ marginTop: 25, marginLeft: 20, width: 200 }}>
-                        <Dropdown
-                            options={categoryOptions}
-                            className='react-dropdown-h'
-                            onChange={(e) => {
-                                this.setState({ categoryFilter: e })
-                            }}
-                            value={this.state.categoryFilter} />
-                    </div>
 
-                    <Button style={{ marginTop: 25, marginLeft: 20, height: 10 }}
-                            variant="outlined"
-                            color="primary"
-                            onClick={() => {
-                                /* Generate new URL to redirect user to */
-                                this.props.history.push('/search/?category=' + this.state.categoryFilter.value + "&term="+ this.state.searchTerm );
-                            }}> Search</Button>
+
+
                 </div>
                 <div className="right-part">
 

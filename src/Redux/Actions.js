@@ -18,7 +18,7 @@ const axios = Axios.create({
 // ke bad az in state user set koni
 // valy alan ino ejra migiram ke API call ro bebini
 export const login = (user) => dispatch => {
-    axios.post('v1/users/login', user)
+    axios.post('https://deomi.liara.run/v1/users/login', user)
         .then(res => {
             const { token } = res.data;
             localStorage.setItem('jwtToken', token);
@@ -59,7 +59,7 @@ export const getProducts = () => dispatch =>  {
 
 
 export const registerUser = (user, history) => dispatch => {
-    axios.post('https://api.parand-computer.ir/v1/users', user)
+    axios.post('https://deomi.liara.run/v1/users', user)
         .then(res => history.push('/login'))
         .catch(err => {
             dispatch({

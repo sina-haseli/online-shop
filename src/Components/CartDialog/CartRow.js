@@ -56,6 +56,6 @@ const CartRow = (props) => {
 
         </TableRow>
     )
-}
+};
 
 export default CartRow ;
