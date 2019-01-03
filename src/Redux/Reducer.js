@@ -24,9 +24,10 @@ const rootReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case CONSTANTS.ADD_ITEM_IN_CART: {
-            state.cartItems = state.cartItems || []
+            state.cartItems = state.cartItems || [];
+            state.cartItems.length=state.cartItems.length||0;
             // User wants to add item in cart, let's first find if such item is already in cart.
-            let index = state.cartItems.findIndex(x => x.id === action.payload.id);
+            let index = state.cartItems.findIndex(x => x._id === action.payload._id);
 
             if (index !== -1) {
 
@@ -46,7 +47,7 @@ const rootReducer = (state = initialState, action) => {
         }
 
         case CONSTANTS.UPDATE_CART_ITEM_QUANTITY: {
-            let index = state.cartItems.findIndex(x => x.id === action.payload.id);
+            let index = state.cartItems.findIndex(x => x._id === action.payload._id);
 
             /* Update quantity of certain item in cart */
             if (index !== -1) {
@@ -66,7 +67,7 @@ const rootReducer = (state = initialState, action) => {
             return { ...state, showCartDialog: action.payload };
 
         case CONSTANTS.DELETE_CART_ITEM:
-            return { ...state, cartItems: state.cartItems.filter(x => x.id !== action.payload) };
+            return { ...state, cartItems: state.cartItems.filter(x => x._id !== action.payload) };
         case CONSTANTS.SET_CHECKEDOUT_ITEMS:
             return { ...state, checkedOutItems: action.payload };
 

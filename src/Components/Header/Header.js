@@ -7,8 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import {showCartDlg, toggleMenu, setLoggedInUser, setCurrentUser} from "../../Redux/Actions"
-import Dropdown from 'react-dropdown'
+import {showCartDlg, toggleMenu, setLoggedInUser} from "../../Redux/Actions"
 import 'react-dropdown/style.css'
 import cartImage from "../../Images/DeomiLogo.png"
 import Person from '@material-ui/icons/PersonOutline';
@@ -20,7 +19,7 @@ import HamburgerButton from "../MenuIcon/MenuIcon";
 
 
 const mapStateToProps = state => {
-   return {  loggedInUser: state.loggedInUser, };
+   return { nrOfItemsInCard: 0,  loggedInUser: state.loggedInUser, };
 };
 
 
@@ -63,7 +62,7 @@ class ConnectedHeader extends Component {
                         <IconButton aria-label="Cart" onClick={() => {
                             this.props.dispatch(showCartDlg(true))
                         }}>
-                            <Badge badgeContent={"0"} color="primary">
+                            <Badge badgeContent={this.props.nrOfItemsInCard || 0} color="primary">
                                 <ShoppingCartIcon />
                             </Badge>
                         </IconButton>
