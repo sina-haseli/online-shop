@@ -12,7 +12,7 @@ class ConnectedItem extends Component{
     render() {
         return(
           <div className="item" style={{height:"270px", width:"200px"}} onClick={()=> {
-              this.props.history.push('/details/' + this.props.item.id);
+              this.props.history.push('/details/' + this.props.item._id);
           }}>
               <div style={{color:"gray", margin: 5, fontSize: 16, whiteSpace: "nowrap", overflow: "hidden" , textOverflow: "ellipsis"}}>{this.props.item.name}</div>
               <div style={{height: 160, width:  160, marginLeft:20}}><img alt={this.props.item.name} height={160} width={160} src={this.props.item.pictures}/></div>

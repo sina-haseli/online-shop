@@ -16,6 +16,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import setAuthToke from '../../setAuthToken';
 import HamburgerButton from "../MenuIcon/MenuIcon";
+import Sidebar from 'react-sidebar';
 
 
 const mapStateToProps = state => {
@@ -25,6 +26,16 @@ const mapStateToProps = state => {
 
 
 class ConnectedHeader extends Component {
+    constructor(props) {
+        super(props);
+        this.state={
+            sidebarOpen: true
+        };
+        this.onSetSidebarOpen= this.onSetSidebarOpen.bind(this);
+    }
+    onSetSidebarOpen(open) {
+        this.setState({ sidebarOpen: open });
+    }
     state = {
         searchTerm: "",
         anchorEl: null,

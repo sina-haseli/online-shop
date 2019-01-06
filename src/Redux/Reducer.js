@@ -47,22 +47,6 @@ const rootReducer = (state = initialState, action) => {
 
         }
 
-        case CONSTANTS.UPDATE_CART_ITEM_QUANTITY: {
-            let index = state.cartItems.findIndex(x => x._id === action.payload._id);
-
-            /* Update quantity of certain item in cart */
-            if (index !== -1) {
-                let cloneCartItems = [...state.cartItems];
-                cloneCartItems[index] = {
-                    ...cloneCartItems[index],
-                    quantity: action.payload.quantity
-                };
-
-                return { ...state, cartItems: cloneCartItems }
-            }
-
-            return state;
-        }
 
         case CONSTANTS.SHOW_CART_DLG:
             return { ...state, showCartDialog: action.payload };
@@ -70,7 +54,7 @@ const rootReducer = (state = initialState, action) => {
         case CONSTANTS.DELETE_CART_ITEM:
             console.log('>>>> pl', action.payload)
             console.log('>>> items', state.cartItems)
-            return { ...state, cartItems: state.cartItems.filter(item => item._id !== action.payload) };
+            return { ...state, cartItems: state.cartItems.filter(x => x._id !== action.payload) };
         case CONSTANTS.SET_CHECKEDOUT_ITEMS:
             return { ...state, checkedOutItems: action.payload };
 
@@ -96,6 +80,22 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 showMenu: !state.showMenu
             };
+        case CONSTANTS.UPDATE_CART_ITEM_QUANTITY: {
+            let index = state.cartItems.findIndex(x => x._id === action.payload._id);
+
+            /* Update quantity of certain item in cart */
+            if (index !== -1) {
+                let cloneCartItems = [...state.cartItems];
+                cloneCartItems[index] = {
+                    ...cloneCartItems[index],
+                    quantity: action.payload.quantity
+                };
+
+                return { ...state, cartItems: cloneCartItems }
+            }
+
+            return state;
+        }
 
         default:
             return state;
