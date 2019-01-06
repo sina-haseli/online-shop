@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import { showCartDlg, deleteCartItem, updateCartItemQnt } from "../../Redux/Actions"
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
+import connect from "react-redux/es/connect/connect";
+
 
 
 
@@ -12,11 +14,12 @@ import { Link } from 'react-router-dom'
  * Represents a single item row in the table.
  */
 
-/*
+
 class ConnectedCartRow extends Component{
 
     render(){
-        let item=this.props.items;
+        let {item}=this.props;
+        console.log('>>>> item', item, this.props)
         return(
         <TableRow>
             <TableCell>
@@ -25,7 +28,7 @@ class ConnectedCartRow extends Component{
 
                         this.props.dispatch(showCartDlg(false))
                     }}>
-                        {item.title}
+                        {item.category}
                     </div>
                 </Link>
 
@@ -61,11 +64,11 @@ class ConnectedCartRow extends Component{
         );
     }
 }
-*/
 
 
 
 
+/*
 const CartRow = (props)=>{
         let {item}=props;
         return(
@@ -76,7 +79,7 @@ const CartRow = (props)=>{
 
                             props.dispatch(showCartDlg(false))
                         }}>
-                            {item.name}
+                            {item.category}
                         </div>
                     </Link>
 
@@ -111,6 +114,9 @@ const CartRow = (props)=>{
             </TableRow>
         );
 };
-
-//const CartRow=withRouter(connect(mapStateToProps)(ConnectedCartRow));
+*/
+const mapStateToProps = state=> {
+    return {  };
+};
+const CartRow=withRouter(connect(mapStateToProps)(ConnectedCartRow));
 export default CartRow ;

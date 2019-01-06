@@ -21,7 +21,7 @@ import Sidebar from 'react-sidebar';
 
 const mapStateToProps = state => {
     console.log('>>> state', state)
-   return { nrOfItemsInCard:state.size || 0,  loggedInUser: state.loggedInUser };
+   return { nrOfItemsInCard:(state.size+1) || 0,  loggedInUser: state.loggedInUser };
 };
 
 

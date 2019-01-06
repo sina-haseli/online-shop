@@ -81,7 +81,7 @@ const rootReducer = (state = initialState, action) => {
                 showMenu: !state.showMenu
             };
         case CONSTANTS.UPDATE_CART_ITEM_QUANTITY: {
-            let index = state.cartItems.findIndex(x => x._id === action.payload._id);
+            let index = state.cartItems.findIndex(x => x.id === action.payload.id);
 
             /* Update quantity of certain item in cart */
             if (index !== -1) {
