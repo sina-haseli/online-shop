@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import { showCartDlg, deleteCartItem, updateCartItemQnt } from "../../Redux/Actions"
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import {Link, withRouter} from 'react-router-dom';
-import connect from "react-redux";
+import { Link } from 'react-router-dom'
 
 
 
@@ -77,7 +76,7 @@ const CartRow = (props)=>{
 
                             props.dispatch(showCartDlg(false))
                         }}>
-                            {item.category}
+                            {item.name}
                         </div>
                     </Link>
 
