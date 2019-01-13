@@ -2,7 +2,7 @@ export const SET_LOGGED_IN_USER = "SET_LOGGED_IN_USER";
 export const ADD_ITEM_IN_CART = "ADD_ITEM_IN_CART";
 
 
-// in jash inja nist ama kirete
+// in jash inja nist ama
 export const BASE_URL = 'https://deomi.liara.run/';
 export const TOGGLE_MENU = "TOGGLE_MENU";
 export const SHOW_CART_DLG = "SHOW_CART_DLG";

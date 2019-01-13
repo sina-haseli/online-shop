@@ -16,7 +16,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import setAuthToke from '../../setAuthToken';
 import HamburgerButton from "../MenuIcon/MenuIcon";
-import Sidebar from 'react-sidebar';
+
 
 
 const mapStateToProps = state => {
