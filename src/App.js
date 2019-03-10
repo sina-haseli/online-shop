@@ -9,7 +9,7 @@ import Order from "./Components/Order/Order"
 import Login from "./Components/Login/Login"
 import {login, getProducts} from './Redux/Actions'
 import Register from "./Components/Register/Register";
-import ProductList from "./Components/ProductList/ProductList"; // in rah e dorost e action nist, valy kirete
+import ProductList from "./Components/ProductList/ProductList"; 
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute"
 
 class App extends Component {
